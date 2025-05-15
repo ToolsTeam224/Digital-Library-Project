@@ -1,14 +1,14 @@
 # List all books in the database
 list_books() {
     clear							# Clear the screen
-    echo ""
+    echo ""							# New line
     echo "╔═════════════════════╗"
     echo "║  📚 All Books List  ║"
     echo "╚═════════════════════╝"
     echo ""
     cat "$DB_FILE"			# Print the full database content (title, author, category for each book)
     echo ""
-    read -p "🔁 Press Enter to return to the menu..." dummy	# Wait for Enter to return
+    read -p "🔁 Press Enter to return to the menu..."	        # Wait for Enter to return
     user_menu							# Back to user menu
 }
 
@@ -20,10 +20,10 @@ admin_login() {
     echo "=============="
     read -sp "Enter admin password: " password			# -s hides input, -p shows the prompt
     echo ""
-    stored_pass=$(<"$ADMIN_PASS_FILE")
+    stored_pass=$(<"$ADMIN_PASS_FILE")				# < reads the file content directly
     if [ "$password" != "$stored_pass" ]; then			# Check if password is incorrect
-        echo -e "\n❌ Access denied!"				# Show error message
-        sleep 1
+        echo -e "\n❌ Access denied!"				# Show error message, -e enables interpretation of escape sequences like \n
+        sleep 1							# Pause the script for 1 second
         main_menu						# Go back to the main menu
     else
         admin_menu						# If correct password, go to admin menu
