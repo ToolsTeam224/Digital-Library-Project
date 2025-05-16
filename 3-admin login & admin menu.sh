@@ -51,7 +51,7 @@ admin_menu() {
         2) delete_book ;;                	# Call function to delete a book
         3) view_database ;;                 	# Call function to view database
         4) change_admin_password ;;	    	# Call function to change password
-        4) main_menu ;;                     	# Return to main menu
+        5) main_menu ;;                     	# Return to main menu
         *) echo -e "\n❌ Invalid option"; sleep 1; admin_menu ;;	# Handle wrong input
     esac
 }
