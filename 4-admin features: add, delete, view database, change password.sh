@@ -18,7 +18,7 @@ add_book() {
     # Pressing Ctrl+D ends the input and saves it to the file.
     
     # Add book data to the database
-    echo "$title,$author,$category" >> "$DB_FILE"
+    echo "$title, $author, $category" >> "$DB_FILE"
     echo -e "\n✅ Book added successfully!"
     sleep 1
     admin_menu	# Return to the admin menu
